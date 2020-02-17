@@ -166,6 +166,7 @@ function setIFrameHeight() {
 (function ($) {
 	$(window).bind("load", function () {
 		setIFrameHeight();
+		lert(window.location.host);
 	});
 })(jQuery);
 

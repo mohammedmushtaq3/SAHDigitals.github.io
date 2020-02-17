@@ -24,6 +24,8 @@ Name: custom.js
 		
 		04. Loading Screen
 
+		05.
+
 */
 
 
@@ -142,6 +144,41 @@ jQuery(document).ready(function ($) {
 
 });
 
+/**
+ *  Things to Do after page load
+ */
+
+
+(function ($) {
+	$(window).bind("load", function () {
+
+		setTimeout(
+		function() 
+		{
+			if (window.location.href.indexOf("index") > -1 || window.location.hostname == "sahdigitals.org") {
+				$("a[href='#simple360']").parent().hide();
+				$("a[href='#vr-tour']").parent().hide();
+				$("a[href='#floor-plan']").parent().hide();
+			}
+
+			if (window.location.href.indexOf("page-works") > -1) {
+				$("a[href='#services']").parent().hide();
+				$("a[href='#works']").parent().hide();
+				$("a[href='#pricing']").parent().hide();
+				$("a[href='index.html']").removeAttr("data-uk-scroll");
+			}
+		}, 100);
+		setIFrameHeight();
+		// setPhotosViewsCount();
+	});
+})(jQuery);
+
+
+/*======================
+	
+		05. Set Map Embed Iframe Height
+	
+	========================*/
 
 function isMobile() {
 	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -152,40 +189,43 @@ function isMobile() {
 }
 
 function setIFrameHeight() {
-	var height=500;
+	var height = 500;
 	if (isMobile()) {
-		if(window.innerHeight > window.innerWidth){
+		if (window.innerHeight > window.innerWidth) {
 			var navbarHeight = $(".uk-navbar-container").height();
 			var windowHeight = $(window).height();
-			height = windowHeight -navbarHeight - 30;
+			height = windowHeight - navbarHeight - 30;
 		}
 	}
-	$("iframe").attr("height",height);
+	$("iframe").attr("height", height);
 }
 
-(function ($) {
-	$(window).bind("load", function () {
-		setIFrameHeight();
-		lert(window.location.host);
-	});
-})(jQuery);
+
 
 // window.onorientationchange = setIFrameHeight();
-$( window ).on( "orientationchange", function( event ) {
+$(window).on("orientationchange", function (event) {
 	setIFrameHeight();
 });
 
-function sendMailJS(){
-    var to = "sahdigital360@gmail.com";
+/*======================
+	
+		06. Mail
+	
+	========================*/
+
+
+function sendMailJS() {
+	var to = "sahdigital360@gmail.com";
 	var subject = "HIRE";
 	var firstName = $("input[name=fname]").val();
 	var lastName = $("input[name=lname]").val();
 	var phone = $("input[name=phone]").val();
 	var message = $("textarea[name=message]").val();
-	var body = "Name: "+firstName+" "+lastName
-			+" , Phone: "+phone 
-			+" , Message: "+message;
-    window.open("mailto:"+to+" ?subject="+subject+"&body="+body);
-    // window.open("mailto:email@address.com?subject=test&body=type%20your%0D%0Amessage%20here");
-	
+	var body = "Name: " + firstName + " " + lastName
+		+ " , Phone: " + phone
+		+ " , Message: " + message;
+	window.open("mailto:" + to + " ?subject=" + subject + "&body=" + body);
+	// window.open("mailto:email@address.com?subject=test&body=type%20your%0D%0Amessage%20here");
+
 }
+

@@ -192,38 +192,41 @@
                         <div class="form-row">
                             <div class="col-sm-12 col-md-6">
                                 <div class="md-form">
-                                    <!-- Start: Name --><input class="form-control form-control" type="text" id="username" placeholder="Name" name="name">
+                                    <!-- Start: Name --><input class="form-control form-control" type="text" id="username" placeholder="Name" name="name" required="" maxlength="30" minlength="4" title="invalid name">
                                     <!-- End: Name -->
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-6">
                                 <div class="md-form">
-                                    <!-- Start: Phone --><input class="form-control md-form" type="text" id="phone" placeholder="phone" name="phone">
+                                    <!-- Start: Phone --><input class="form-control md-form" type="number" id="phone" placeholder="phone" name="phone" title="invalid number no special characters">
                                     <!-- End: Phone -->
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col">
-                                <div class="md-form"><input class="form-control browser-default custom-select" type="email" id="email" name="email" placeholder="Email"></div>
-                                <div class="md-form"><select class="form-control browser-default custom-select" id="device" name="device"><option value="" selected="">Device</option><option value="iphone">iPhone</option><option value="samsung">Samsung</option><option value="google-pixel">Google Pixel</option><option value="oneplus">OnePlus</option><option value="tablet">Tablet</option><option value="computer">Computer</option><option value="console">Game Console</option><option value="other">Other</option></select></div>
+                                <div class="md-form"><input class="form-control browser-default custom-select" type="email" id="email" name="email" placeholder="Email" pattern="[a-zA-Z0-9_\.\+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-\.]+" required="" title="invalid email address"></div>
                                 <div
-                                    class="md-form"><select class="form-control browser-default custom-select" id="model" name="model" style="display: none;"><option value="" selected="">Model</option><option value="other">Other</option></select></div>
-                            <div class="md-form"><select class="form-control browser-default custom-select" id="damage" name="damage"><option value="" selected="">What's wrong with your device</option><option value="Broken Screen">Broken Screen</option><option value="Water Damage">Water Damage</option><option value="Won't Charge">Won't Charge</option><option value="Short Battery Life">Short Battery Life</option><option value="I Don't Know / Other">I Don't Know / Other</option></select></div>
+                                    class="md-form"><select class="form-control browser-default custom-select" id="device" name="device"><option value="" selected="">Device</option><option value="iphone">iPhone</option><option value="samsung">Samsung</option><option value="google-pixel">Google Pixel</option><option value="oneplus">OnePlus</option><option value="tablet">Tablet</option><option value="computer">Computer</option><option value="console">Game Console</option><option value="other">Other</option></select></div>
                             <div
-                                class="form-group"><textarea class="form-control" id="message" type="submit" rows="4" placeholder="Message"></textarea></div><button class="btn btn-primary" id="formMail" type="button"><strong>REQUEST &nbsp;</strong><i class="fa fa-angle-right" style="font-weight: bold;"></i></button></div>
+                                class="md-form"><select class="form-control browser-default custom-select" id="model" name="model" style="display: none;"><option value="" selected="">Model</option><option value="other">Other</option></select></div>
+                        <div class="md-form"><select class="form-control browser-default custom-select" id="damage" name="damage" required=""><option value="" selected="">What's wrong with your device</option><option value="Broken Screen">Broken Screen</option><option value="Water Damage">Water Damage</option><option value="Won't Charge">Won't Charge</option><option value="Short Battery Life">Short Battery Life</option><option value="I Don't Know / Other">I Don't Know / Other</option></select></div>
+                        <div
+                            class="form-group"><textarea class="form-control" id="message" type="submit" rows="4" placeholder="Message"></textarea></div>
+                <div class="md-form"><input class="form-control btn btn-primary d-inline-block" type="submit" id="formMail" style="width: inherit;float: right;"></div>
             </div>
-            </form>
-            <!-- End: Contact Form -->
-            <div class="modal fade" role="dialog" tabindex="-1" id="formModal">
-                <div class="modal-dialog modal-sm" role="document">
-                    <div class="modal-content">
-                        <div class="modal-body modal-dialog-center">
-                            <p>Sit back and relax soon our customer executive will contact you.</p>
-                        </div>
+        </div>
+        </form>
+        <!-- End: Contact Form -->
+        <div class="modal fade" role="dialog" tabindex="-1" id="formModal">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-body modal-dialog-center">
+                        <p>Sit back and relax soon our customer executive will contact you.</p>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         <div class="col-lg-6 order-sm-1 order-md-1 order-lg-2 order-xl-2 text-center">
             <h2 class="text-sm-center text-md-center text-lg-left text-xl-left section-heading">Frequently Asked Questions</h2>

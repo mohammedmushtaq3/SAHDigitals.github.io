@@ -201,7 +201,6 @@ function setIFrameHeight() {
 }
 
 
-
 // window.onorientationchange = setIFrameHeight();
 $(window).on("orientationchange", function (event) {
 	setIFrameHeight();
